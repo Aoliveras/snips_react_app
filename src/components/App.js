@@ -49,10 +49,10 @@ class App extends Component {
     });
   };
 
-  insertSnippet = snippet => {
+  insertSnippet = async snippet => {
     console.log(snippet);
-    axios.post('http://localhost:5000/api/snippets');
-    const { data } = axios.get('http://localhost:5000/api/snippets');
+    axios.post('http://localhost:5000/api/snippets', snippet);
+    const { data } = await axios.get('http://localhost:5000/api/snippets');
     console.log(data);
 
     this.setState({

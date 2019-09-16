@@ -67,9 +67,9 @@ const snippetData = [
 export default function SnipList({ snippets }) {
   return (
     <section id="snippets">
-      {snippets.map(snippet => (
-        <Snip key={snippet.id} snippet={snippet} />
-      ))}
+      {snippets
+        .map(snippet => <Snip key={snippet.id} snippet={snippet} />)
+        .reverse()}
     </section>
   );
 }

@@ -7,7 +7,7 @@ export default class SnippetForm extends Component {
     this.state = {
       author: 'Yo momma',
       title: '',
-      language: '',
+      language: 'HTML',
       description: '',
       code: '',
     };
@@ -38,7 +38,7 @@ export default class SnippetForm extends Component {
             value={title}
             onChange={this.handleChange}
           />
-          <select value={this.state.value} onChange={this.handleChange} name="language">
+          <select value={language} onChange={this.handleChange} name="language">
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
