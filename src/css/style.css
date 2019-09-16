@@ -6,6 +6,7 @@
 @import 'hero.css';
 @import 'snippets.css';
 @import 'search.css';
+@import 'snippetForm.css';
 
 html {
   font-family: 'Montserrat', sans-serif;

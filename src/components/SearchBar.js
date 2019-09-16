@@ -16,10 +16,16 @@ export default class SearchBar extends Component {
     });
   };
 
+  handleSubmit = evt => {
+    evt.preventDefault();
+    console.log('submitting');
+    this.props.onSearch(this.state.searchText);
+  };
+
   render() {
     const { searchText } = this.state;
     return (
-      <form id="search">
+      <form id="search" onSubmit={this.handleSubmit}>
         <label htmlFor="search-text">
           <span className="icon">🔎</span>
         </label>

@@ -3,8 +3,7 @@
 // 2. hold data in state so that it will be passed down to our Snips.
 // 3. render snips.
 
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import Snip from './Snip';
 
 // dummy code
@@ -65,30 +64,12 @@ const snippetData = [
   },
 ];
 
-export default class SnipList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      snippets: [],
-    };
-  }
-
-  async componentDidMount() {
-    console.log('SnipList mounted!!! Huzaaah!!!');
-    const { data } = await axios.get('http://localhost:5000/api/snippets');
-    console.log(data);
-    this.setState({
-      snippets: data,
-    });
-  }
-  render() {
-    return (
-      <section id="snippets">
-        {this.state.snippets.map(snippet => (
-          <Snip key={snippet.id} snippet={snippet} />
-        ))}
-      </section>
-    );
-  }
+export default function SnipList({ snippets }) {
+  return (
+    <section id="snippets">
+      {snippets.map(snippet => (
+        <Snip key={snippet.id} snippet={snippet} />
+      ))}
+    </section>
+  );
 }
