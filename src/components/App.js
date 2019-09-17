@@ -51,12 +51,13 @@ class App extends Component {
 
   insertSnippet = async snippet => {
     console.log(snippet);
-    axios.post('http://localhost:5000/api/snippets', snippet);
-    const { data } = await axios.get('http://localhost:5000/api/snippets');
-    console.log(data);
-
+    await axios.post('http://localhost:5000/api/snippets', snippet);
+    const { data: snippets } = await axios.get(
+      'http://localhost:5000/api/snippets'
+    );
+    console.log(snippets);
     this.setState({
-      snippets: data,
+      snippets,
     });
   };
 

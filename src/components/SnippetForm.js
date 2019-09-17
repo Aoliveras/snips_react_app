@@ -31,14 +31,21 @@ export default class SnippetForm extends Component {
     return (
       <div id="snippetFormContainer">
         <form id="createSnippet" onSubmit={this.handleSubmit}>
+          <h3 id="snippetFormHeader">Create a Snip!</h3>
           <input
             type="text"
             name="title"
             id="title"
             value={title}
             onChange={this.handleChange}
+            placeholder="Title"
           />
-          <select value={language} onChange={this.handleChange} name="language">
+          <select
+            id="select"
+            value={language}
+            onChange={this.handleChange}
+            name="language"
+          >
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
@@ -50,6 +57,7 @@ export default class SnippetForm extends Component {
             id="description"
             value={description}
             onChange={this.handleChange}
+            placeholder="Description of your Snip..."
           />
           <textarea
             type="text"
@@ -57,8 +65,9 @@ export default class SnippetForm extends Component {
             id="code"
             value={code}
             onChange={this.handleChange}
+            placeholder="Place your code here."
           />
-          <button type="submit">Submit Yo Snip!</button>
+          <button type="submit">Create</button>
         </form>
       </div>
     );
