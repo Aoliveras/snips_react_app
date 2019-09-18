@@ -24,6 +24,13 @@ export default class SnippetForm extends Component {
     evt.preventDefault();
     console.log('submitting snippetForm');
     this.props.onSubmit(this.state);
+    this.setState({
+      author: 'Yo momma',
+      title: '',
+      language: 'HTML',
+      description: '',
+      code: '',
+    });
   };
 
   render() {
